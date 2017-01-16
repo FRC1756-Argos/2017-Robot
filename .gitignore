@@ -10,7 +10,12 @@
 
 # Executables
 *.exe
+*.rtexe
 
 # Metadata
 *.aliases
 *.lvlps
+
+# Build directory
+Builds/
+
