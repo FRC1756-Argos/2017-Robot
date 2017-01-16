@@ -489,7 +489,6 @@ AddOutputFilter chunkFilter
 				<Item Name="Write Value Core.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Write Value Core.vi"/>
 			</Item>
 			<Item Name="Argo_Drive.vi" Type="VI" URL="../Extra/Argo_Drive.vi"/>
-			<Item Name="Auto_PID_Drive.vi" Type="VI" URL="../Extra/Auto_PID_Drive.vi"/>
 			<Item Name="FRC_NetworkCommunication.dll" Type="Document" URL="FRC_NetworkCommunication.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -497,8 +496,6 @@ AddOutputFilter chunkFilter
 			<Item Name="libc.so.6" Type="Document" URL="libc.so.6">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Lookup_Table.vi" Type="VI" URL="../Extra/Lookup_Table.vi"/>
-			<Item Name="Motor_Command.vi" Type="VI" URL="../Extra/Motor_Command.vi"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -511,12 +508,9 @@ AddOutputFilter chunkFilter
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Rate_Limit.vi" Type="VI" URL="../Extra/Rate_Limit.vi"/>
 			<Item Name="RobotDriveMotors.vi" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/RobotDriveMotors.vi"/>
 			<Item Name="RobotDriveMotorSelectorEnum.ctl" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/RobotDriveMotorSelectorEnum.ctl"/>
 			<Item Name="RobotDriveOpen6MotorWithTalonSRX.vi" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/RobotDriveOpen6MotorWithTalonSRX.vi"/>
-			<Item Name="Saturation_Powers.vi" Type="VI" URL="../Extra/Saturation_Powers.vi"/>
-			<Item Name="Turning_Power_Mode.vi" Type="VI" URL="../Extra/Turning_Power_Mode.vi"/>
 			<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
@@ -537,7 +531,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{6782B190-04E1-4A41-93AB-3F357B35791E}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">6</Property>
+				<Property Name="Bld_version.build" Type="Int">7</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
