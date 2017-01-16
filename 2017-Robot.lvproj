@@ -126,16 +126,23 @@ AddOutputFilter chunkFilter
 			<Item Name="Motor_RefNum.vi" Type="VI" URL="../Extra/Motor_RefNum.vi"/>
 			<Item Name="Periodic Tasks.vi" Type="VI" URL="../Periodic Tasks.vi"/>
 			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
+			<Item Name="Shooter_Motor.vi" Type="VI" URL="../Extra/Shooter_Motor.vi"/>
 			<Item Name="Teleop.vi" Type="VI" URL="../Teleop.vi"/>
 			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
 		</Item>
 		<Item Name="Auto_PID_Drive.vi" Type="VI" URL="../Extra/Auto_PID_Drive.vi"/>
+		<Item Name="Feeder_Motor.vi" Type="VI" URL="../Extra/Feeder_Motor.vi"/>
+		<Item Name="Gear_Rail.vi" Type="VI" URL="../Extra/Gear_Rail.vi"/>
+		<Item Name="Global_Var_Other.vi" Type="VI" URL="../Extra/Global_Var_Other.vi"/>
+		<Item Name="Intake_Motor.vi" Type="VI" URL="../Extra/Intake_Motor.vi"/>
 		<Item Name="Library.lvlib" Type="Library" URL="../Library.lvlib"/>
 		<Item Name="Lookup_Table.vi" Type="VI" URL="../Extra/Lookup_Table.vi"/>
 		<Item Name="Motor_Command.vi" Type="VI" URL="../Extra/Motor_Command.vi"/>
 		<Item Name="Rate_Limit.vi" Type="VI" URL="../Extra/Rate_Limit.vi"/>
 		<Item Name="Robot Main.vi" Type="VI" URL="../Robot Main.vi"/>
+		<Item Name="RobotDriveMotors.vi" Type="VI" URL="../Extra/RobotDriveMotors.vi"/>
+		<Item Name="RobotDriveOpen6MotorWithTalonSRX.vi" Type="VI" URL="../Extra/RobotDriveOpen6MotorWithTalonSRX.vi"/>
 		<Item Name="Saturation_Powers.vi" Type="VI" URL="../Extra/Saturation_Powers.vi"/>
 		<Item Name="Turning_Power_Mode.vi" Type="VI" URL="../Extra/Turning_Power_Mode.vi"/>
 		<Item Name="XBOX_Joystick_Name.vi" Type="VI" URL="../Extra/XBOX_Joystick_Name.vi"/>
@@ -508,10 +515,8 @@ AddOutputFilter chunkFilter
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="RobotDriveMotors.vi" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/RobotDriveMotors.vi"/>
-			<Item Name="RobotDriveMotorSelectorEnum.ctl" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/RobotDriveMotorSelectorEnum.ctl"/>
-			<Item Name="RobotDriveOpen6MotorWithTalonSRX.vi" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/RobotDriveOpen6MotorWithTalonSRX.vi"/>
-			<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../../2016-Robot/Team Code/Begin/Motor/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
+			<Item Name="RobotDriveMotorSelectorEnum.ctl" Type="VI" URL="../Extra/RobotDriveMotorSelectorEnum.ctl"/>
+			<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../Extra/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="FRC Robot Boot-up Deployment" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
@@ -531,7 +536,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{6782B190-04E1-4A41-93AB-3F357B35791E}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">7</Property>
+				<Property Name="Bld_version.build" Type="Int">8</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
