@@ -132,6 +132,7 @@ AddOutputFilter chunkFilter
 			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
 		</Item>
 		<Item Name="Auto_PID_Drive.vi" Type="VI" URL="../Extra/Auto_PID_Drive.vi"/>
+		<Item Name="Debounce.vi" Type="VI" URL="../Extra/Debounce.vi"/>
 		<Item Name="Feeder_Motor.vi" Type="VI" URL="../Extra/Feeder_Motor.vi"/>
 		<Item Name="Gear_Rail.vi" Type="VI" URL="../Extra/Gear_Rail.vi"/>
 		<Item Name="Global_Var_Other.vi" Type="VI" URL="../Extra/Global_Var_Other.vi"/>
