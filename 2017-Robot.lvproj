@@ -128,11 +128,12 @@ AddOutputFilter chunkFilter
 			<Item Name="Begin.vi" Type="VI" URL="../Begin.vi"/>
 			<Item Name="Disabled.vi" Type="VI" URL="../Disabled.vi"/>
 			<Item Name="Finish.vi" Type="VI" URL="../Finish.vi"/>
+			<Item Name="Gear_Gate.vi" Type="VI" URL="../Extra/Gear_Gate.vi"/>
 			<Item Name="Joystick.vi" Type="VI" URL="../Extra/Joystick.vi"/>
 			<Item Name="Joystick_Open.vi" Type="VI" URL="../Joystick_Open.vi"/>
 			<Item Name="Motor_Open.vi" Type="VI" URL="../Motor_Open.vi"/>
-			<Item Name="periodicTasksRefNum.vi" Type="VI" URL="../Extra/periodicTasksRefNum.vi"/>
 			<Item Name="Periodic Tasks.vi" Type="VI" URL="../Periodic Tasks.vi"/>
+			<Item Name="periodicTasksRefNum.vi" Type="VI" URL="../Extra/periodicTasksRefNum.vi"/>
 			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
 			<Item Name="Shooter_Motor.vi" Type="VI" URL="../Extra/Shooter_Motor.vi"/>
 			<Item Name="Teleop.vi" Type="VI" URL="../Teleop.vi"/>
