@@ -27,7 +27,6 @@
 			<Item Name="FRC Simulated.xml" Type="Document" URL="../FRC Simulated.xml"/>
 		</Item>
 		<Item Name="Robot Simulation Readme.html" Type="Document" URL="../Robot Simulation Readme.html"/>
-		<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/Global_Var_Drive.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
@@ -116,44 +115,62 @@ AddOutputFilter chunkFilter
 		</Item>
 		<Item Name="Team Code" Type="Folder">
 			<Property Name="NI.SortType" Type="Int">3</Property>
-			<Item Name="Drive" Type="Folder">
-				<Item Name="Argo_Drive.vi" Type="VI" URL="../Extra/Argo_Drive.vi"/>
-				<Item Name="RobotDriveMotors.vi" Type="VI" URL="../Extra/RobotDriveMotors.vi"/>
-				<Item Name="RobotDriveMotorSelectorEnum.ctl" Type="VI" URL="../Extra/RobotDriveMotorSelectorEnum.ctl"/>
-				<Item Name="RobotDriveOpen6MotorTalon.vi" Type="VI" URL="../Extra/RobotDriveOpen6MotorTalon.vi"/>
-				<Item Name="RobotDriveOpen6MotorWithTalonSR.vi" Type="VI" URL="../Extra/RobotDriveOpen6MotorWithTalonSR.vi"/>
-				<Item Name="RobotDriveOpen6MotorWithTalonSRX.vi" Type="VI" URL="../Extra/RobotDriveOpen6MotorWithTalonSRX.vi"/>
-				<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../Extra/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
+			<Item Name="Drive" Type="Folder"/>
+			<Item Name="Extra" Type="Folder">
+				<Item Name="ADI MXP IMU" Type="Folder">
+					<Item Name="FRC_ADIS16448_IMU.lvlib" Type="Library" URL="../Extra/ADI MXP IMU/FRC_ADIS16448_IMU.lvlib"/>
+				</Item>
+				<Item Name="Auto" Type="Folder"/>
+				<Item Name="Begin-Open" Type="Folder">
+					<Item Name="Motor_Open.vi" Type="VI" URL="../Extra/Begin-Open/Motor_Open.vi"/>
+				</Item>
+				<Item Name="Drive" Type="Folder">
+					<Item Name="Argo_Drive.vi" Type="VI" URL="../Extra/Drive/Argo_Drive.vi"/>
+					<Item Name="Auto_PID_Drive.vi" Type="VI" URL="../Extra/Drive/Auto_PID_Drive.vi"/>
+					<Item Name="RobotDriveMotors.vi" Type="VI" URL="../Extra/Drive/RobotDriveMotors.vi"/>
+					<Item Name="RobotDriveMotorSelectorEnum.ctl" Type="VI" URL="../Extra/Drive/RobotDriveMotorSelectorEnum.ctl"/>
+					<Item Name="RobotDriveOpen6MotorTalon.vi" Type="VI" URL="../Extra/Drive/RobotDriveOpen6MotorTalon.vi"/>
+					<Item Name="RobotDriveOpen6MotorWithTalonSR.vi" Type="VI" URL="../Extra/Drive/RobotDriveOpen6MotorWithTalonSR.vi"/>
+					<Item Name="RobotDriveOpen6MotorWithTalonSRX.vi" Type="VI" URL="../Extra/Drive/RobotDriveOpen6MotorWithTalonSRX.vi"/>
+					<Item Name="Saturation_Powers.vi" Type="VI" URL="../Extra/Drive/Saturation_Powers.vi"/>
+					<Item Name="Turning_Power_Mode.vi" Type="VI" URL="../Extra/Drive/Turning_Power_Mode.vi"/>
+					<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../Extra/Drive/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
+				</Item>
+				<Item Name="General" Type="Folder">
+					<Item Name="Hypotenuse_Control.vi" Type="VI" URL="../Extra/General/Hypotenuse_Control.vi"/>
+					<Item Name="Joystick.vi" Type="VI" URL="../Extra/General/Joystick.vi"/>
+					<Item Name="Lookup_Table.vi" Type="VI" URL="../Extra/General/Lookup_Table.vi"/>
+					<Item Name="Motor_Command.vi" Type="VI" URL="../Extra/General/Motor_Command.vi"/>
+					<Item Name="Rate_Limit.vi" Type="VI" URL="../Extra/General/Rate_Limit.vi"/>
+				</Item>
+				<Item Name="Global_Var-RefNum" Type="Folder">
+					<Item Name="Global_Var_Other.vi" Type="VI" URL="../Extra/Global_Var-RefNum/Global_Var_Other.vi"/>
+					<Item Name="periodicTasksRefNum.vi" Type="VI" URL="../Extra/Global_Var-RefNum/periodicTasksRefNum.vi"/>
+					<Item Name="XBOX_Joystick_Name.vi" Type="VI" URL="../Extra/Global_Var-RefNum/XBOX_Joystick_Name.vi"/>
+				</Item>
+				<Item Name="Implements" Type="Folder">
+					<Item Name="Feeder_Motor.vi" Type="VI" URL="../Extra/Implements/Feeder_Motor.vi"/>
+					<Item Name="Gear_Gate.vi" Type="VI" URL="../Extra/Implements/Gear_Gate.vi"/>
+					<Item Name="Gear_Rail.vi" Type="VI" URL="../Extra/Implements/Gear_Rail.vi"/>
+					<Item Name="Intake_Motor.vi" Type="VI" URL="../Extra/Implements/Intake_Motor.vi"/>
+					<Item Name="Shooter_Motor.vi" Type="VI" URL="../Extra/Implements/Shooter_Motor.vi"/>
+				</Item>
+				<Item Name="LED" Type="Folder"/>
+				<Item Name="Vision" Type="Folder"/>
 			</Item>
 			<Item Name="Autonomous Independent.vi" Type="VI" URL="../Autonomous Independent.vi"/>
 			<Item Name="Begin.vi" Type="VI" URL="../Begin.vi"/>
 			<Item Name="Disabled.vi" Type="VI" URL="../Disabled.vi"/>
 			<Item Name="Finish.vi" Type="VI" URL="../Finish.vi"/>
-			<Item Name="Gear_Gate.vi" Type="VI" URL="../Extra/Gear_Gate.vi"/>
-			<Item Name="Joystick.vi" Type="VI" URL="../Extra/Joystick.vi"/>
 			<Item Name="Joystick_Open.vi" Type="VI" URL="../Joystick_Open.vi"/>
-			<Item Name="Motor_Open.vi" Type="VI" URL="../Motor_Open.vi"/>
 			<Item Name="Periodic Tasks.vi" Type="VI" URL="../Periodic Tasks.vi"/>
-			<Item Name="periodicTasksRefNum.vi" Type="VI" URL="../Extra/periodicTasksRefNum.vi"/>
 			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
-			<Item Name="Shooter_Motor.vi" Type="VI" URL="../Extra/Shooter_Motor.vi"/>
 			<Item Name="Teleop.vi" Type="VI" URL="../Teleop.vi"/>
 			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
 		</Item>
-		<Item Name="Auto_PID_Drive.vi" Type="VI" URL="../Extra/Auto_PID_Drive.vi"/>
-		<Item Name="Feeder_Motor.vi" Type="VI" URL="../Extra/Feeder_Motor.vi"/>
-		<Item Name="Gear_Rail.vi" Type="VI" URL="../Extra/Gear_Rail.vi"/>
-		<Item Name="Global_Var_Other.vi" Type="VI" URL="../Extra/Global_Var_Other.vi"/>
-		<Item Name="Intake_Motor.vi" Type="VI" URL="../Extra/Intake_Motor.vi"/>
-		<Item Name="Lookup_Table.vi" Type="VI" URL="../Extra/Lookup_Table.vi"/>
-		<Item Name="Motor_Command.vi" Type="VI" URL="../Extra/Motor_Command.vi"/>
 		<Item Name="Pneumatic_Open.vi" Type="VI" URL="../Pneumatic_Open.vi"/>
-		<Item Name="Rate_Limit.vi" Type="VI" URL="../Extra/Rate_Limit.vi"/>
 		<Item Name="Robot Main.vi" Type="VI" URL="../Robot Main.vi"/>
-		<Item Name="Saturation_Powers.vi" Type="VI" URL="../Extra/Saturation_Powers.vi"/>
-		<Item Name="Turning_Power_Mode.vi" Type="VI" URL="../Extra/Turning_Power_Mode.vi"/>
-		<Item Name="XBOX_Joystick_Name.vi" Type="VI" URL="../Extra/XBOX_Joystick_Name.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
@@ -618,11 +635,10 @@ AddOutputFilter chunkFilter
 				<Item Name="WPI_UtilitiesTimebaseConstants.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Utilities/WPI_UtilitiesTimebaseConstants.vi"/>
 				<Item Name="Write Value Core.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Write Value Core.vi"/>
 			</Item>
-			<Item Name="FRC_ADIS16448_IMU.lvlib" Type="Library" URL="../Extra/ADI MXP IMU/FRC_ADIS16448_IMU.lvlib"/>
 			<Item Name="FRC_NetworkCommunication.dll" Type="Document" URL="FRC_NetworkCommunication.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/Global_Var_Drive.vi"/>
+			<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/General/Global_Var_Drive.vi"/>
 			<Item Name="libc.so.6" Type="Document" URL="libc.so.6">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -638,6 +654,7 @@ AddOutputFilter chunkFilter
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="WPI_IMU_ADIS16448_RefNum Registry Get.vi" Type="VI" URL="../Extra/Global_Var-RefNum/ADI MXP IMU/WPI_IMU_ADIS16448_RefNum Registry Get.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="FRC Robot Boot-up Deployment" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
