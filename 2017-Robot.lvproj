@@ -131,6 +131,7 @@ AddOutputFilter chunkFilter
 			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
 		</Item>
+		<Item Name="Assisted Turning.vi" Type="VI" URL="../Extra/Assisted Turning.vi"/>
 		<Item Name="Auto_PID_Drive.vi" Type="VI" URL="../Extra/Auto_PID_Drive.vi"/>
 		<Item Name="Debounce.vi" Type="VI" URL="../Extra/Debounce.vi"/>
 		<Item Name="Feeder_Motor.vi" Type="VI" URL="../Extra/Feeder_Motor.vi"/>
@@ -578,8 +579,8 @@ AddOutputFilter chunkFilter
 				<Item Name="WPI_UtilitiesTimebaseConstants.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Utilities/WPI_UtilitiesTimebaseConstants.vi"/>
 				<Item Name="Write Value Core.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Write Value Core.vi"/>
 			</Item>
+			<Item Name="ADIS16448_IMU.lvlib" Type="Library" URL="../Extra/ADI MXP IMU/ADIS16448_IMU.lvlib"/>
 			<Item Name="Argo_Drive.vi" Type="VI" URL="../Extra/Argo_Drive.vi"/>
-			<Item Name="FRC_ADIS16448_IMU.lvlib" Type="Library" URL="../Extra/ADI MXP IMU/FRC_ADIS16448_IMU.lvlib"/>
 			<Item Name="FRC_NetworkCommunication.dll" Type="Document" URL="FRC_NetworkCommunication.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -621,7 +622,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{6782B190-04E1-4A41-93AB-3F357B35791E}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">10</Property>
+				<Property Name="Bld_version.build" Type="Int">12</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
