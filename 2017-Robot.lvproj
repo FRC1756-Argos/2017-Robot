@@ -115,7 +115,6 @@ AddOutputFilter chunkFilter
 		</Item>
 		<Item Name="Team Code" Type="Folder">
 			<Property Name="NI.SortType" Type="Int">3</Property>
-			<Item Name="Drive" Type="Folder"/>
 			<Item Name="Extra" Type="Folder">
 				<Item Name="ADI MXP IMU" Type="Folder">
 					<Item Name="FRC_ADIS16448_IMU.lvlib" Type="Library" URL="../Extra/ADI MXP IMU/FRC_ADIS16448_IMU.lvlib"/>
@@ -638,7 +637,7 @@ AddOutputFilter chunkFilter
 			<Item Name="FRC_NetworkCommunication.dll" Type="Document" URL="FRC_NetworkCommunication.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/General/Global_Var_Drive.vi"/>
+			<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/Global_Var-RefNum/Global_Var_Drive.vi"/>
 			<Item Name="libc.so.6" Type="Document" URL="libc.so.6">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -654,7 +653,6 @@ AddOutputFilter chunkFilter
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="WPI_IMU_ADIS16448_RefNum Registry Get.vi" Type="VI" URL="../Extra/Global_Var-RefNum/ADI MXP IMU/WPI_IMU_ADIS16448_RefNum Registry Get.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="FRC Robot Boot-up Deployment" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
