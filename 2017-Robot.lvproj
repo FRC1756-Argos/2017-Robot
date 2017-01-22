@@ -115,14 +115,15 @@ AddOutputFilter chunkFilter
 		</Item>
 		<Item Name="Team Code" Type="Folder">
 			<Property Name="NI.SortType" Type="Int">3</Property>
-			<Item Name="Drive" Type="Folder"/>
 			<Item Name="Extra" Type="Folder">
 				<Item Name="ADI MXP IMU" Type="Folder">
 					<Item Name="FRC_ADIS16448_IMU.lvlib" Type="Library" URL="../Extra/ADI MXP IMU/FRC_ADIS16448_IMU.lvlib"/>
 				</Item>
 				<Item Name="Auto" Type="Folder"/>
 				<Item Name="Begin-Open" Type="Folder">
+					<Item Name="Joystick_Open.vi" Type="VI" URL="../Extra/Begin-Open/Joystick_Open.vi"/>
 					<Item Name="Motor_Open.vi" Type="VI" URL="../Extra/Begin-Open/Motor_Open.vi"/>
+					<Item Name="Pneumatic_Open.vi" Type="VI" URL="../Extra/Begin-Open/Pneumatic_Open.vi"/>
 				</Item>
 				<Item Name="Drive" Type="Folder">
 					<Item Name="Argo_Drive.vi" Type="VI" URL="../Extra/Drive/Argo_Drive.vi"/>
@@ -135,6 +136,7 @@ AddOutputFilter chunkFilter
 					<Item Name="Saturation_Powers.vi" Type="VI" URL="../Extra/Drive/Saturation_Powers.vi"/>
 					<Item Name="Turning_Power_Mode.vi" Type="VI" URL="../Extra/Drive/Turning_Power_Mode.vi"/>
 					<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../Extra/Drive/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
+					<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/Global_Var-RefNum/Global_Var_Drive.vi"/>
 				</Item>
 				<Item Name="General" Type="Folder">
 					<Item Name="Hypotenuse_Control.vi" Type="VI" URL="../Extra/General/Hypotenuse_Control.vi"/>
@@ -162,14 +164,12 @@ AddOutputFilter chunkFilter
 			<Item Name="Begin.vi" Type="VI" URL="../Begin.vi"/>
 			<Item Name="Disabled.vi" Type="VI" URL="../Disabled.vi"/>
 			<Item Name="Finish.vi" Type="VI" URL="../Finish.vi"/>
-			<Item Name="Joystick_Open.vi" Type="VI" URL="../Joystick_Open.vi"/>
 			<Item Name="Periodic Tasks.vi" Type="VI" URL="../Periodic Tasks.vi"/>
 			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
 			<Item Name="Teleop.vi" Type="VI" URL="../Teleop.vi"/>
 			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
 		</Item>
-		<Item Name="Pneumatic_Open.vi" Type="VI" URL="../Pneumatic_Open.vi"/>
 		<Item Name="Robot Main.vi" Type="VI" URL="../Robot Main.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -638,7 +638,6 @@ AddOutputFilter chunkFilter
 			<Item Name="FRC_NetworkCommunication.dll" Type="Document" URL="FRC_NetworkCommunication.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/General/Global_Var_Drive.vi"/>
 			<Item Name="libc.so.6" Type="Document" URL="libc.so.6">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -654,7 +653,6 @@ AddOutputFilter chunkFilter
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="WPI_IMU_ADIS16448_RefNum Registry Get.vi" Type="VI" URL="../Extra/Global_Var-RefNum/ADI MXP IMU/WPI_IMU_ADIS16448_RefNum Registry Get.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="FRC Robot Boot-up Deployment" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
@@ -674,7 +672,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{6782B190-04E1-4A41-93AB-3F357B35791E}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">9</Property>
+				<Property Name="Bld_version.build" Type="Int">10</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
