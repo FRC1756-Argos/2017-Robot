@@ -114,57 +114,26 @@ AddOutputFilter chunkFilter
 			<Item Name="Elapsed Times.vi" Type="VI" URL="../Elapsed Times.vi"/>
 		</Item>
 		<Item Name="Team Code" Type="Folder">
-			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="Extra" Type="Folder">
 				<Item Name="Auto" Type="Folder"/>
-				<Item Name="Begin-Open" Type="Folder">
-					<Item Name="Joystick_Open.vi" Type="VI" URL="../Extra/Begin-Open/Joystick_Open.vi"/>
-					<Item Name="Motor_Open.vi" Type="VI" URL="../Extra/Begin-Open/Motor_Open.vi"/>
-					<Item Name="Pneumatic_Open.vi" Type="VI" URL="../Extra/Begin-Open/Pneumatic_Open.vi"/>
+				<Item Name="Begin-Open" Type="Folder" URL="../Extra/Begin-Open">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
-				<Item Name="Drive" Type="Folder">
-					<Item Name="Argo_Drive.vi" Type="VI" URL="../Extra/Drive/Argo_Drive.vi"/>
-					<Item Name="Auto_PID_Drive.vi" Type="VI" URL="../Extra/Drive/Auto_PID_Drive.vi"/>
-					<Item Name="RobotDriveMotors.vi" Type="VI" URL="../Extra/Drive/RobotDriveMotors.vi"/>
-					<Item Name="RobotDriveMotorSelectorEnum.ctl" Type="VI" URL="../Extra/Drive/RobotDriveMotorSelectorEnum.ctl"/>
-					<Item Name="RobotDriveOpen6MotorTalon.vi" Type="VI" URL="../Extra/Drive/RobotDriveOpen6MotorTalon.vi"/>
-					<Item Name="RobotDriveOpen6MotorWithTalonSR.vi" Type="VI" URL="../Extra/Drive/RobotDriveOpen6MotorWithTalonSR.vi"/>
-					<Item Name="RobotDriveOpen6MotorWithTalonSRX.vi" Type="VI" URL="../Extra/Drive/RobotDriveOpen6MotorWithTalonSRX.vi"/>
-					<Item Name="Saturation_Powers.vi" Type="VI" URL="../Extra/Drive/Saturation_Powers.vi"/>
-					<Item Name="Turning_Power_Mode.vi" Type="VI" URL="../Extra/Drive/Turning_Power_Mode.vi"/>
-					<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../Extra/Drive/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
-					<Item Name="Global_Var_Drive.vi" Type="VI" URL="../Extra/Global_Var-RefNum/Global_Var_Drive.vi"/>
+				<Item Name="Drive" Type="Folder" URL="../Extra/Drive">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
-				<Item Name="General" Type="Folder">
-					<Item Name="Hypotenuse_Control.vi" Type="VI" URL="../Extra/General/Hypotenuse_Control.vi"/>
-					<Item Name="Joystick.vi" Type="VI" URL="../Extra/General/Joystick.vi"/>
-					<Item Name="Lookup_Table.vi" Type="VI" URL="../Extra/General/Lookup_Table.vi"/>
-					<Item Name="Motor_Command.vi" Type="VI" URL="../Extra/General/Motor_Command.vi"/>
-					<Item Name="Rate_Limit.vi" Type="VI" URL="../Extra/General/Rate_Limit.vi"/>
+				<Item Name="General" Type="Folder" URL="../Extra/General">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
-				<Item Name="Global_Var-RefNum" Type="Folder">
-					<Item Name="Global_Var_Other.vi" Type="VI" URL="../Extra/Global_Var-RefNum/Global_Var_Other.vi"/>
-					<Item Name="periodicTasksRefNum.vi" Type="VI" URL="../Extra/Global_Var-RefNum/periodicTasksRefNum.vi"/>
-					<Item Name="XBOX_Joystick_Name.vi" Type="VI" URL="../Extra/Global_Var-RefNum/XBOX_Joystick_Name.vi"/>
+				<Item Name="Global_Var-RefNum" Type="Folder" URL="../Extra/Global_Var-RefNum">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
-				<Item Name="Implements" Type="Folder">
-					<Item Name="Feeder_Motor.vi" Type="VI" URL="../Extra/Implements/Feeder_Motor.vi"/>
-					<Item Name="Gear_Gate.vi" Type="VI" URL="../Extra/Implements/Gear_Gate.vi"/>
-					<Item Name="Gear_Rail.vi" Type="VI" URL="../Extra/Implements/Gear_Rail.vi"/>
-					<Item Name="Intake_Motor.vi" Type="VI" URL="../Extra/Implements/Intake_Motor.vi"/>
-					<Item Name="Shooter_Motor.vi" Type="VI" URL="../Extra/Implements/Shooter_Motor.vi"/>
+				<Item Name="Implements" Type="Folder" URL="../Extra/Implements">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
 				<Item Name="LED" Type="Folder"/>
-				<Item Name="Sensors" Type="Folder">
-					<Item Name="ADI MXP IMU" Type="Folder">
-						<Item Name="FRC_ADIS16448_IMU.lvlib" Type="Library" URL="../Extra/Sensors/ADI MXP IMU/FRC_ADIS16448_IMU.lvlib"/>
-					</Item>
-					<Item Name="Ultrasonic" Type="Folder">
-						<Item Name="Ultrasonic_Get_Range.vi" Type="VI" URL="../Extra/Sensors/Ultrasonic/Ultrasonic_Get_Range.vi"/>
-						<Item Name="Ultrasonic_Open.vi" Type="VI" URL="../Extra/Sensors/Ultrasonic/Ultrasonic_Open.vi"/>
-						<Item Name="Ultrasonic_Ref_Get.vi" Type="VI" URL="../Extra/Sensors/Ultrasonic/Ultrasonic_Ref_Get.vi"/>
-						<Item Name="Ultrasonic_Ref_Set.vi" Type="VI" URL="../Extra/Sensors/Ultrasonic/Ultrasonic_Ref_Set.vi"/>
-					</Item>
+				<Item Name="Sensors" Type="Folder" URL="../Extra/Sensors">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
 				<Item Name="Vision" Type="Folder"/>
 			</Item>
@@ -708,7 +677,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{6782B190-04E1-4A41-93AB-3F357B35791E}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">11</Property>
+				<Property Name="Bld_version.build" Type="Int">12</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
