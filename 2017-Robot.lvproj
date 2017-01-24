@@ -115,6 +115,7 @@ AddOutputFilter chunkFilter
 			<Item Name="Elapsed Times.vi" Type="VI" URL="../Elapsed Times.vi"/>
 		</Item>
 		<Item Name="Team Code" Type="Folder">
+			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="Drive" Type="Folder">
 				<Item Name="Argo_Drive.vi" Type="VI" URL="../Extra/Argo_Drive.vi"/>
 				<Item Name="RobotDriveMotors.vi" Type="VI" URL="../Extra/RobotDriveMotors.vi"/>
@@ -124,11 +125,14 @@ AddOutputFilter chunkFilter
 				<Item Name="RobotDriveOpen6MotorWithTalonSRX.vi" Type="VI" URL="../Extra/RobotDriveOpen6MotorWithTalonSRX.vi"/>
 				<Item Name="WPI_RobotDriveGetMotorControlReference_6Motor.vi" Type="VI" URL="../Extra/WPI_RobotDriveGetMotorControlReference_6Motor.vi"/>
 			</Item>
-			<Item Name="Arbitor_Float.vi" Type="VI" URL="../Arbitor_Float.vi"/>
 			<Item Name="Autonomous Independent.vi" Type="VI" URL="../Autonomous Independent.vi"/>
 			<Item Name="Begin.vi" Type="VI" URL="../Begin.vi"/>
 			<Item Name="Disabled.vi" Type="VI" URL="../Disabled.vi"/>
 			<Item Name="Finish.vi" Type="VI" URL="../Finish.vi"/>
+			<Item Name="Arbitor_Float.vi" Type="VI" URL="../Arbitor_Float.vi"/>
+			<Item Name="Arbitor.vi" Type="VI" URL="../Arbitor.vi"/>
+			<Item Name="Arbitor_Bool.vi" Type="VI" URL="../Arbitor_Bool.vi"/>
+			<Item Name="Arbitor_Int.vi" Type="VI" URL="../Arbitor_Int.vi"/>
 			<Item Name="Joystick.vi" Type="VI" URL="../Extra/Joystick.vi"/>
 			<Item Name="Joystick_Open.vi" Type="VI" URL="../Joystick_Open.vi"/>
 			<Item Name="Motor_Open.vi" Type="VI" URL="../Motor_Open.vi"/>
