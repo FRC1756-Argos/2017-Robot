@@ -115,7 +115,9 @@ AddOutputFilter chunkFilter
 		</Item>
 		<Item Name="Team Code" Type="Folder">
 			<Item Name="Extra" Type="Folder">
-				<Item Name="Auto" Type="Folder"/>
+				<Item Name="Auto" Type="Folder">
+					<Item Name="Shooter_Operator_Assist.vi" Type="VI" URL="../Extra/Autonomous/Shooter_Operator_Assist.vi"/>
+				</Item>
 				<Item Name="Begin-Open" Type="Folder" URL="../Extra/Begin-Open">
 					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
