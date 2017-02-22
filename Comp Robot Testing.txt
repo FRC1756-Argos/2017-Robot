@@ -1,0 +1,36 @@
+Gear Rail max= 21.4
+Gear Rail min= 2.7
+ForwardStartScale=15.4
+ReverseStartScale=8.7
+UltrasonicMaxRange=24.7
+
+
+GearGate Lower= 1575
+GearGate Upper= 1440
+GearGate Clamped=1465
+GearGateCatch=1502
+GearGateOpen=1560
+
+Practice
+ForwardLimit=1700
+ReverseLimit=1560
+ForwardStartScale=1700
+ReverseStartScale=1560
+Scale=.012
+AcceptableRange=5
+Timeout=750
+CatchPos=1604
+ClampPos=1570
+OpenPos=1669
+UltrasonicMaxRange=27
+
+
+
+GearRail
+ForwardLimit=23.25
+ReverseLimit=6.35
+ForwardStartScale=17.25
+ReverseStartScale=12.35
+
+
+
