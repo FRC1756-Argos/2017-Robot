@@ -116,6 +116,7 @@ AddOutputFilter chunkFilter
 		<Item Name="Team Code" Type="Folder">
 			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="Extra" Type="Folder">
+				<Property Name="NI.SortType" Type="Int">0</Property>
 				<Item Name="Autonomous" Type="Folder" URL="../Extra/Autonomous">
 					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
