@@ -139,6 +139,9 @@ AddOutputFilter chunkFilter
 				<Item Name="Sensors" Type="Folder" URL="../Extra/Sensors">
 					<Property Name="NI.DISK" Type="Bool">true</Property>
 				</Item>
+				<Item Name="TypeDefs" Type="Folder" URL="../Extra/TypeDefs">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
+				</Item>
 				<Item Name="Vision" Type="Folder"/>
 			</Item>
 			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
