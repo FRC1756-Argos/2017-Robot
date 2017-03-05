@@ -3,7 +3,7 @@
 // 2017 Argos LED Controller i2c
 // Receives Game Status from Robo RIO over i2c and controls LEDs
 
-include <bitswap.h>
+#include <bitswap.h>
 #include <chipsets.h>
 #include <color.h>
 #include <colorpalettes.h>
@@ -37,17 +37,22 @@ include <bitswap.h>
 //#include <Adafruit_DotStar.h>
 #include <SPI.h>
 
-#define NUMPIXELS 62// Number of LEDs in strip
+#define NUM_LEDS_SIDE 30// Number of LEDs on side of robot
+#define NUM_LEDS_TUR 15// Number of LEDs on turrets
 
 // control the LEDs pins:
-#define DATAPIN1    4
-#define CLOCKPIN1   5
-#define DATAPIN2    8
-#define CLOCKPIN2   9
+#define DATAPIN1    4 // side leds
+#define CLOCKPIN1   5 // side leds
+#define DATAPIN2    8 // turret leds
+#define CLOCKPIN2   9 // turret leds
 #define COLOR_ORDER GBR
 #define CHIPSET APA102
 #define BRIGHTNESS  250
 #define FRAMES_PER_SECOND 60
+
+
+CRGB leds_side[NUM_LEDS_SIDE]; //setup array for side leds
+CRGB leds_tur[NUM_LEDS_TUR]; //setup array for turret leds
 
 
 const int sampleWindow = 50; // Sample window width in mS (50 mS = 20Hz)
@@ -55,10 +60,10 @@ unsigned int sample;
 char gameMode = 'D';
 char autonMode = 'S';
 char gearPos = 'I';
-char turret = 'U';
+char turretaim = 'U';
 char win = 'N';
 char alliance = 'R';
-char climb = 'J'
+char climb = 'J';
 unsigned char yoyoPos = 30;
 unsigned char pegPos = 30;
 
@@ -68,21 +73,24 @@ int sound_scale = 512;
 int lightDelay = 0;
 
 //Color Definitions
-uint32_t auto_gearright = 0x0000FF; //Green
-uint32_t auto_gearleft = 0xFFFF00; //Yellow
-uint32_t auto_num5 = 0xFF00FF; //Pink
-uint32_t auto_gearstraight = 0xFFFFFF; //white
-uint32_t auto_num6 = 0x00FFFF; //Teal
-uint32_t auto_num4 = 0xF000FF; //Purple
+uint32_t auto_gearright = CRGB::Green; //Green
+uint32_t auto_gearleft = CRGB::Yellow; //Yellow
+uint32_t auto_num5 = CRGB::Pink; //Pink
+uint32_t auto_gearstraight = CRGB::White; //white
+uint32_t auto_num6 = CRGB::Teal; //Teal
+uint32_t auto_num4 = CRGB::Purple; //Purple
 
-     // 'On' color (starts red)
-uint32_t testColor = 0xFF0000;      // 'On' color (starts red)
-uint32_t aimedColor = 0x00FF00;      // 'On' color (aimed = green)
-uint32_t notaimedColor = 0xF000FF;      // 'On' color (not aimed = purple)
+uint32_t turretColor = CRGB::Red;
+uint32_t aimedColor = CRGB::Green;      // 'On' color (aimed = green)
+uint32_t targetfoundColor = CRGB::Blue;      // 'On' color (not aimed = purple)
+uint32_t notargetColor = CRGB::Red; 
+
+
+
 uint32_t alliancecolor = 0xFF0000;      // 'On' color (starts red)
 uint32_t disablecolor = 0xFF0000;      // 'On' color (starts red)
-uint32_t catyellowcolor = 0x444400;      // 'On' color (starts red)
-uint32_t autonModecolor = 0x444400;      // 'On' color (starts red)
+uint32_t catyellowcolor = 0x444400;      
+uint32_t autonModecolor = 0x444400;      // 'On' color (starts CAT Yellow)
 uint32_t color = 0xFF0000;
 uint32_t teleColor = alliancecolor;
 
@@ -94,23 +102,13 @@ void setup()
   Wire.onReceive(receiveEvent); // register event
   Serial.begin(115200);           // start serial for output
 
-  FastLED.addLeds<CHIPSET, LED_PIN,CLOCK_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
+  FastLED.addLeds<CHIPSET, DATAPIN1,CLOCKPIN1, COLOR_ORDER>(leds_side, NUM_LEDS_SIDE).setCorrection( TypicalLEDStrip );
+  FastLED.addLeds<CHIPSET, DATAPIN2,CLOCKPIN2, COLOR_ORDER>(leds_tur, NUM_LEDS_TUR).setCorrection( TypicalLEDStrip );
   FastLED.setBrightness( BRIGHTNESS );
-  FastLED.addLeds<CHIPSET, LED_PIN,CLOCK_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
-  FastLED.setBrightness( BRIGHTNESS );
-
-
-  strip1.begin(); // Initialize pins for output
-  strip1.show();  // Turn all LEDs off ASAP
-  strip2.begin(); // Initialize pins for output
-  strip2.show();  // Turn all LEDs off ASAP
-  //strip.setBrightness(20);
 
   Serial.print("ARGOS 1756!");
 
 }
-
-
 
 void loop()
 {
@@ -137,9 +135,6 @@ void loop()
       case 'T':
         teleopMode(); //Tele Green
         break;
-      case 'X':
-        testMode(); //Test Multi color
-        break;
       default:
         disabledMode(); // Disabled Red
     }
@@ -151,39 +146,33 @@ void loop()
 
 void celebrationMode()
 {
-  for (int x = 0; x < NUMPIXELS; x++)
+  for (int x = 0; x < NUM_LEDS_SIDE; x++)
   {
     color = random();
-    strip1.setPixelColor (x, color);
-    strip2.setPixelColor (x, color);
+    leds_side[x] = color;
   }
-  strip1.show();
-  strip2.show();
+  FastLED.show();
   delay(50);
 }
 
 void auton()
 {
  
-  for (int x = 0; x < NUMPIXELS; x++)
+  for (int x = 0; x < NUM_LEDS_SIDE; x++)
   {
 
-    strip1.setPixelColor (x, alliancecolor);
-    strip2.setPixelColor (x, alliancecolor);
+   leds_side[x] = alliancecolor;
   }
   while (gameMode == 'A')
   {
   
   for (int x = tail; x < head; x++)
   {
-    strip1.setPixelColor (x, 0x00FF00);
-    strip2.setPixelColor (x, 0x00FF00);
+    leds_side[x] = CRGB::Green;
   }
-    strip1.setPixelColor (tail-1, alliancecolor);
-    strip2.setPixelColor (tail-1, alliancecolor);
-  strip1.show();
-  strip2.show();
-  if (tail <= NUMPIXELS)
+    leds_side[tail-1] = alliancecolor;
+  FastLED.show();
+  if (tail <= NUM_LEDS_SIDE)
   {
     head++;
     tail++;
@@ -201,55 +190,33 @@ void auton()
 void teleopMode()
 {
     
-  for (int x = 0; x < NUMPIXELS; x++)
+  for (int x = 0; x < NUM_LEDS_SIDE; x++)
   {
 
-    strip1.setPixelColor (x, teleColor);
-    strip2.setPixelColor (x, teleColor);
+    leds_side[x] = teleColor;
+    
   }
-  strip1.show();
-  strip2.show();
+  FastLED.show();
   delay(lightDelay);
  
   if (lightDelay >0)
   {
-    for (int x = 0; x < NUMPIXELS; x++)
+    for (int x = 0; x < NUM_LEDS_SIDE; x++)
     {
   
-      strip1.setPixelColor (x, 0);
-      strip2.setPixelColor (x, 0);
+      leds_side[x] = CRGB::Black;
+
     }
-    strip1.show();
-    strip2.show();
+    FastLED.show();
     delay(lightDelay);
   }
-  for (int x = 0; x < NUMPIXELS; x++)
+  for (int x = 0; x < NUM_LEDS_SIDE; x++)
   {
 
-    strip1.setPixelColor (x, teleColor);
-    strip2.setPixelColor (x, teleColor);
+    leds_side[x] = teleColor;
   }
-  strip1.show();
-  strip2.show();
+  FastLED.show();
 
-}
-void testMode()
-{
-  for (int x = 0; x < 36; x++)
-  {
-    color = rand();
-    strip1.setPixelColor (x, color);
-    strip2.setPixelColor (x, color);
-  }
-  for (int x = 36; x < NUMPIXELS; x++)
-  {
-    color = 0x000000;
-    strip1.setPixelColor (x, color);
-    strip2.setPixelColor (x, color);
-  }
-  strip1.show();
-  strip2.show();
-  delay(100);
 }
 
 void disabledMode()
@@ -297,26 +264,22 @@ void disabledMode()
       sound_scale = 100;
    
 
-   int height = (peakToPeak * NUMPIXELS/2) / sound_scale ; // convert to volts
+   int height = (peakToPeak * NUM_LEDS_SIDE/2) / sound_scale ; // convert to volts
  
-   for(i=NUMPIXELS/2; i>=0; i--) {
-    if(i < NUMPIXELS/2 - height)
+   for(i=NUM_LEDS_SIDE/2; i>=0; i--) {
+    if(i < NUM_LEDS_SIDE/2 - height)
     {
-      strip1.setPixelColor(i,0);
-      strip2.setPixelColor(i,0);
-      strip1.setPixelColor(NUMPIXELS-i,0);
-      strip2.setPixelColor(NUMPIXELS-i,0);
+      leds_side[i] = CRGB::Black;
+      leds_side[NUM_LEDS_SIDE-i] = CRGB::Black;
     }
     else
     {
-      strip1.setPixelColor(i,autonModecolor);
-      strip2.setPixelColor(i,autonModecolor);
-      strip1.setPixelColor(NUMPIXELS-i,autonModecolor);
-      strip2.setPixelColor(NUMPIXELS-i,autonModecolor);
+      leds_side[i] = autonModecolor;
+      leds_side[NUM_LEDS_SIDE-i] = autonModecolor;
     }
   }
-  strip1.show(); // Update strip
-  strip2.show(); // Update strip
+  FastLED.show(); // Update strip
+
    Serial.print(height);
    Serial.print(" , ");
    Serial.println(peakToPeak);
@@ -353,7 +316,7 @@ void receiveEvent(int numBytes)
   //   Serial.print(win);
     alliance = text[5];
   //   Serial.println(alliance);
-    turret = text[6];
+    turretaim = text[6];
   //   Serial.println(turret); 
     climb = text[7];
   //   Serial.println(climb);
@@ -361,13 +324,7 @@ void receiveEvent(int numBytes)
   //   Serial.println(yoyoPos);
       pegPos = text[9];
   //   Serial.println(pegPos);
-   
-  aimed = text[4];
-  //    Serial.println(aimed);
-  win = text[5];
-  //   Serial.print(win);
-
-
+ 
 
   if (alliance == 'R')
   {
@@ -377,30 +334,19 @@ void receiveEvent(int numBytes)
   {
     alliancecolor = 0x0000FF;
   }
-  if (aimed == 'X')
+  if (turretaim == 'Q')
   {
-    teleColor = aimedColor;
+    turretColor = aimedColor;
   }
-  else if (aimed == 'Z')
+  else if (turretaim == 'Y')
   {
-    teleColor = notaimedColor;
+    turretColor = targetfoundColor;
   }
   else
   {
-    teleColor = alliancecolor;
+    turretColor = notargetColor;
   }
-  if (ballPos == 'I')
-  {
-    lightDelay = 120;
-  }
-  else if (ballPos == 'S')
-  {
-    lightDelay = 40;
-  }
-   else
-  {
-   lightDelay = 0;
-  }
+
   
   switch (autonMode)
     {
