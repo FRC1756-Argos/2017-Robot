@@ -1,0 +1,3 @@
+[submodule "ArgosLib"]
+	path = ArgosLib
+	url = https://github.com/FRC1756-Argos/ArgosLib-LV.git
